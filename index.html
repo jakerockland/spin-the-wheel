@@ -19,29 +19,18 @@
       border: 10px solid #444;
       border-radius: 50%;
       position: relative;
-      background: conic-gradient(
-        red 0deg,
-        red 36deg,
-        blue 36deg,
-        blue 72deg,
-        red 72deg,
-        red 108deg,
-        blue 108deg,
-        blue 144deg,
-        red 144deg,
-        red 180deg,
-        blue 180deg,
-        blue 216deg,
-        red 216deg,
-        red 252deg,
-        blue 252deg,
-        blue 288deg,
-        red 288deg,
-        red 324deg,
-        blue 324deg,
-        blue 360deg
-      );
+      overflow: hidden;
       transition: transform 3s ease-out;
+    }
+    .section {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      transform-origin: 100% 50%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
     }
     #arrow {
       width: 0;
@@ -62,11 +51,41 @@
 </head>
 <body>
   <div id="wheel" onclick="spinWheel()">
+    <div class="section" style="background-color: red; transform: rotate(0deg);">
+      Giggle
+    </div>
+    <div class="section" style="background-color: blue; transform: rotate(36deg);">
+      Tickle
+    </div>
+    <div class="section" style="background-color: red; transform: rotate(72deg);">
+      Giggle
+    </div>
+    <div class="section" style="background-color: blue; transform: rotate(108deg);">
+      Tickle
+    </div>
+    <div class="section" style="background-color: red; transform: rotate(144deg);">
+      Giggle
+    </div>
+    <div class="section" style="background-color: blue; transform: rotate(180deg);">
+      Tickle
+    </div>
+    <div class="section" style="background-color: red; transform: rotate(216deg);">
+      Giggle
+    </div>
+    <div class="section" style="background-color: blue; transform: rotate(252deg);">
+      Tickle
+    </div>
+    <div class="section" style="background-color: red; transform: rotate(288deg);">
+      Giggle
+    </div>
+    <div class="section" style="background-color: blue; transform: rotate(324deg);">
+      Tickle
+    </div>
     <div id="arrow"></div>
   </div>
   <div id="result">Click the wheel to spin!</div>
   <script>
-    const options = ["tickle", "tickle", "tickle", "tickle", "tickle", "giggle", "giggle", "giggle", "giggle", "giggle"];
+    const options = ["tickle", "tickle", "tickle", "tickle", "tickle", "giggle", "giggle", "giggle", "giggle", "giggle
     const wheel = document.getElementById("wheel");
     const result = document.getElementById("result");
 
