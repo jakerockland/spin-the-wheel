@@ -88,12 +88,12 @@
     const options = ["tickle", "tickle", "tickle", "tickle", "tickle", "giggle", "giggle", "giggle", "giggle", "giggle
     const wheel = document.getElementById("wheel");
     const result = document.getElementById("result");
-
-    function spinWheel() {
+    async function spinWheel() {
+      const arrow = document.getElementById("arrow");
       const randomIndex = Math.floor(Math.random() * options.length);
       const option = options[randomIndex];
       const rotation = 360 / options.length * randomIndex + 360 * (3 + Math.random());
-      wheel.style.transform = `rotate(${rotation}deg)`;
+      arrow.style.transform = `rotate(${rotation}deg)`;
       setTimeout(() => {
         result.textContent = `You got: ${option}`;
       }, 3000);
