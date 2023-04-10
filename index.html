@@ -14,22 +14,12 @@
       margin: 0;
       overflow: hidden;
     }
+    #wheel-container {
+      position: relative;
+    }
     #wheel {
       width: 300px;
       height: 300px;
-      border: 10px solid #444;
-      border-radius: 50%;
-      position: relative;
-    }
-    .section {
-      position: absolute;
-      width: 50%;
-      height: 100%;
-      transform-origin: 100% 50%;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
     }
     #arrow-container {
       position: absolute;
@@ -47,7 +37,7 @@
       border-right: 10px solid transparent;
       border-bottom: 20px solid #444;
       position: absolute;
-      top: -20px;
+      top: -10px;
       left: -10px;
     }
     #result {
@@ -57,38 +47,21 @@
   </style>
 </head>
 <body>
-  <div id="wheel" onclick="spinWheel()">
-    <!-- Sections go here -->
-    <div class="section" style="background-color: red; transform: rotate(0deg);">
-      Giggle
-    </div>
-    <div class="section" style="background-color: blue; transform: rotate(36deg);">
-      Tickle
-    </div>
-    <div class="section" style="background-color: red; transform: rotate(72deg);">
-      Giggle
-    </div>
-    <div class="section" style="background-color: blue; transform: rotate(108deg);">
-      Tickle
-    </div>
-    <div class="section" style="background-color: red; transform: rotate(144deg);">
-      Giggle
-    </div>
-    <div class="section" style="background-color: blue; transform: rotate(180deg);">
-      Tickle
-    </div>
-    <div class="section" style="background-color: red; transform: rotate(216deg);">
-      Giggle
-    </div>
-    <div class="section" style="background-color: blue; transform: rotate(252deg);">
-      Tickle
-    </div>
-    <div class="section" style="background-color: red; transform: rotate(288deg);">
-      Giggle
-    </div>
-    <div class="section" style="background-color: blue; transform: rotate(324deg);">
-      Tickle
-    </div>
+  <div id="wheel-container" onclick="spinWheel()">
+    <svg id="wheel" viewBox="0 0 100 100">
+      <!-- Sections go here -->
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#444" stroke-width="10" />
+      <path d="M50 50 L50 5 A45 45 0 0 1 95 50 Z" fill="red" />
+      <path d="M50 50 L95 50 A45 45 0 0 1 50 95 Z" fill="blue" />
+      <path d="M50 50 L50 95 A45 45 0 0 1 5 50 Z" fill="red" />
+      <path d="M50 50 L5 50 A45 45 0 0 1 50 5 Z" fill="blue" />
+      <path d="M50 50 L50 5 A45 45 0 0 1 80.901 19.098 Z" fill="red" />
+      <path d="M50 50 L80.901 19.098 A45 45 0 0 1 80.901 80.901 Z" fill="blue" />
+      <path d="M50 50 L80.901 80.901 A45 45 0 0 1 19.098 80.901 Z" fill="red" />
+      <path d="M50 50 L19.098 80.901 A45 45 0 0 1 19.098 19.098 Z" fill="blue" />
+      <path d="M50 50 L19.098 19.098 A45 45 0 0 1 50 5 Z" fill="red" />
+      <path d="M50 50 L50 5 A45 45 0 0 1 95 50 Z" fill="blue" />
+    </svg>
     <div id="arrow-container">
       <div id="arrow"></div>
     </div>
