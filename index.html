@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin the Wheel</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      margin: 0;
+    }
+    #wheel {
+      width: 300px;
+      height: 300px;
+      border: 10px solid #444;
+      border-radius: 50%;
+      position: relative;
+      background: repeating-linear-gradient(
+        0deg,
+        #f06,
+        #f06 18deg,
+        #f80 18deg,
+        #f80 36deg
+      );
+    }
+    #arrow {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid #444;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      margin-left: -10px;
+    }
+    #result {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wheel" onclick="spinWheel()">
+    <div id="arrow"></div>
+  </div>
+  <div id="result">Click the wheel to spin!</div>
+  <script>
+    const options = ["tickle", "tickle", "tickle", "tickle", "tickle", "giggle", "giggle", "giggle", "giggle", "giggle"];
+    const wheel = document.getElementById("wheel");
+    const result = document.getElementById("result");
+
+    function spinWheel() {
+      const randomIndex = Math.floor(Math.random() * options.length);
+      const option = options[randomIndex];
+      const rotation = 360 / options.length * randomIndex + 360 * (3 + Math.random());
+      wheel.style.transform = `rotate(${rotation}deg)`;
+      setTimeout(() => {
+        result.textContent = `You got: ${option}`;
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
